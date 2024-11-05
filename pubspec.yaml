@@ -9,9 +9,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  flutter_native_splash: ^2.4.2
   get: ^4.6.6
   http: ^1.2.2
-  json_annotation: ^4.9.0
   shared_preferences: ^2.3.2
            
 
@@ -27,17 +28,28 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/to/font-from-package
+  # Assets section
+  assets:
+    - assets/fonts/
+    - assets/images/
+    - assets/vectors/
+
+  # Fonts section
+  fonts:
+    - family: Satoshi
+      fonts:
+        - asset: assets/fonts/Satoshi-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Satoshi-Bold.ttf
+          weight: 600
+        - asset: assets/fonts/Satoshi-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Satoshi-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Satoshi-Light.ttf
+          weight: 300
+    - family: Eina02
+      fonts:
+        - asset: assets/fonts/Eina02-BoldItalic.ttf
+          weight: 700
+          style: italic
