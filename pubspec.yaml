@@ -1,6 +1,6 @@
 name: post_flow
 description: "A new Flutter project."
-publish_to: 'none' 
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
@@ -9,21 +9,46 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  flutter_launcher_icons: ^0.14.1
   flutter_native_splash: ^2.4.2
   get: ^4.6.6
   http: ^1.2.2
   shared_preferences: ^2.3.2
-           
 
 dev_dependencies:
-  build_runner: ^2.1.7   
-  injectable_generator: ^2.0.0 
+  build_runner: ^2.1.7
+  injectable_generator: ^2.0.0
   flutter_test:
-    sdk: flutter  
-
+    sdk: flutter
   flutter_lints: ^4.0.0
 
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/post_flow_logo_light.png"
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/post_flow_logo_light.png
+  branding: assets/images/post_flow_light.png
+
+  color_dark: "#1c1c1c"
+  image_dark: assets/images/post_flow_logo_dark.png
+  branding_dark: assets/images/post_flow_dark.png 
+
+  android_12:
+    image: assets/images/post_flow_logo_light.png
+    branding: assets/images/post_flow_light.png
+    icon_background_color: "#ffffff"
+
+    image_dark: assets/images/post_flow_logo_dark.png
+    branding_dark: assets/images/post_flow_dark.png 
+    icon_background_color_dark: "#1c1c1c"
+
+
+  web: false
+  android: true
+  ios: true
 
 flutter:
   uses-material-design: true
