@@ -36,7 +36,7 @@ class GetStartedScreen extends StatelessWidget {
                   SizedBox(height: isTablet ? 60 : 40), 
                   CustomAnimatedButton(
                     onPressed: () {},
-                    title: "INVITADO",
+                    title: "CONTINUAR COMO INVITADO",
                     height: buttonHeight,  
                     backgroundColor: Color(0xFF9AD665),
                     textColor: Color(0xFF0C0C0C),
