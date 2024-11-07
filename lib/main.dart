@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:post_flow/controllers/theme/theme_controller.dart';
 import 'package:post_flow/core/configs/theme/app_theme.dart';
+import 'package:post_flow/init_dependencies.dart';
 import 'package:post_flow/presentation/screens/get_started/get_started_screen.dart';
 
 void main() async {
@@ -9,7 +10,7 @@ void main() async {
 
   final ThemeController themeController = Get.put(ThemeController());
   await themeController.loadTheme();
-  
+  init();
   runApp(const MyApp());
 }
 
