@@ -8,7 +8,7 @@ class ThemeColors {
   static const accentColor = Color(0xFFE74C3C); // Color de acento
 
   // Fondo del modo claro
-  static const lightBackgroundColor = Color.fromARGB(255, 255, 255, 255); // Fondo claro
+  static const lightBackgroundColor = Color.fromARGB(255, 245, 236, 228); // Fondo claro
 
   // Colores de texto en modo claro
   static const primaryTextColor = Color(0xFF333333); // Texto principal

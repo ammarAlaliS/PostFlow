@@ -16,7 +16,7 @@ class Logo extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         bool isTablet = constraints.maxWidth > 600;
-        double logoSize = isTablet ? 200 : 150;
+        double logoSize = isTablet ? 400 : 150;
 
         return Obx(() => Image.asset(
               themeController.isDarkMode.value

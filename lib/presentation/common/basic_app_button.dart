@@ -33,7 +33,7 @@ class CustomAnimatedButton extends StatelessWidget {
     }
 
     if (MediaQuery.of(context).size.width > 400) {
-      fontSize = MediaQuery.of(context).size.width * 0.035; 
+      fontSize = MediaQuery.of(context).size.width * 0.025; 
     }
 
     fontSize = fontSize < 16 ? 16 : fontSize;

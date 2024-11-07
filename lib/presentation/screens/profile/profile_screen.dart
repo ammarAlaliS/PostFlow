@@ -2,14 +2,14 @@
 
 import 'package:flutter/widgets.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-        'Welcome to the Flutter App!',
+        'Welcome to the Flutter App profile!',
         style: TextStyle(fontSize: 24),
       ),
     );

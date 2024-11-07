@@ -1,14 +1,14 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:post_flow/controllers/theme/theme_controller.dart';
-import 'package:post_flow/core/configs/assets/app_images.dart';
 import 'package:post_flow/core/configs/assets/app_vectors.dart';
 import 'package:post_flow/core/configs/theme/app_colors.dart';
+import 'package:post_flow/core/utils/update_system_ui_overlay.dart';
 import 'package:post_flow/presentation/common/basic_app_button.dart';
 import 'package:post_flow/presentation/common/logo.dart';
+import 'package:post_flow/presentation/root/root.dart';
 import 'package:post_flow/presentation/widgets/basic_app_select_theme_button.dart';
 
 class ScaffoldBody extends StatelessWidget {
@@ -30,15 +30,23 @@ class ScaffoldBody extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Logo(
-                  height: 150,
-                  width: 159,
+                const Logo(
+                  height: 0,
+                  width: 0,
                 ),
                 SizedBox(height: isTablet ? 60 : 40),
                 _buildRow(context, themeController),
                 SizedBox(height: isTablet ? 60 : 40),
                 Obx(() => CustomAnimatedButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        // Verifica si el controlador está listo antes de navegar
+                      if (Get.isRegistered<ThemeController>()) {
+                        // Realiza la navegación
+                        await Get.off(() => const Root(),
+                            transition: Transition.rightToLeft,
+                            duration: const Duration(milliseconds: 300));
+                      }
+                      },
                       title: "CONTINUAR COMO INVITADO",
                       height: buttonHeight,
                       backgroundColor: themeController.isDarkMode.value
@@ -58,6 +66,10 @@ class ScaffoldBody extends StatelessWidget {
 }
 
 Widget _buildRow(BuildContext context, ThemeController themeController) {
+  themeController.isDarkMode.listen((isDarkMode) {
+    updateSystemUIOverlay(isDarkMode: isDarkMode);
+  });
+  updateSystemUIOverlay(isDarkMode: themeController.isDarkMode.value);
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     crossAxisAlignment: CrossAxisAlignment.center,
@@ -83,7 +95,7 @@ Widget _buildRow(BuildContext context, ThemeController themeController) {
           },
         ),
       ),
-      SizedBox(width: 40),
+      const SizedBox(width: 40),
       Obx(
         () => BasicAppSelectTheme(
           initialCircleColor: themeController.isDarkMode.value

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:post_flow/presentation/common/custom_scaffold.dart';
-import 'package:post_flow/presentation/screens/home/body.dart';
+import 'package:post_flow/presentation/screens/get_started/body.dart';
 
 
 class GetStartedScreen extends StatelessWidget {
