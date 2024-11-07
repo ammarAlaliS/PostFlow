@@ -7,6 +7,7 @@ class PostDetailScreen extends StatelessWidget {
   final String body;
   final String date;
   final int id;
+  final int userId;
   final bool isDarkMode;
 
   const PostDetailScreen({
@@ -15,7 +16,8 @@ class PostDetailScreen extends StatelessWidget {
     required this.body,
     required this.date,
     required this.id,
-    required this.isDarkMode,
+    required this.isDarkMode, 
+    required this.userId,
   });
 
   @override
@@ -27,6 +29,7 @@ class PostDetailScreen extends StatelessWidget {
           body: body,
           date: date,
           id: id,
+          userId: userId,
           isDarkMode: isDarkMode,
         ),
       ),

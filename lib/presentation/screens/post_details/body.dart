@@ -10,6 +10,7 @@ class BodyPostDetails extends StatelessWidget {
   final String body;
   final String date;
   final int id;
+  final int userId;
   final bool isDarkMode;
 
   const BodyPostDetails({
@@ -18,7 +19,7 @@ class BodyPostDetails extends StatelessWidget {
     required this.body,
     required this.date,
     required this.id,
-    required this.isDarkMode,
+    required this.isDarkMode, required this.userId,
   });
 
   @override
@@ -38,6 +39,7 @@ class BodyPostDetails extends StatelessWidget {
               title: title,
               body: body,
               date: date,
+              userId: userId,
             ),
             const SizedBox(height: 20),
             CustomTitle(title: "Comentarios de la publicación"),

@@ -1,5 +1,5 @@
 import 'package:post_flow/domain/entities/user.dart';
 
-abstract class UserRepository {
-  Future<User> getUser();
+abstract class UserRepositoryInterface {
+  Future<User> getUser(int userId);
 }

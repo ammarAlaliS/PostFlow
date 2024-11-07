@@ -19,12 +19,10 @@ class CommentsSection extends StatelessWidget {
     final ThemeController themeController = Get.find();
     final isDarkMode = themeController.isDarkMode.value;
 
-    // Obtenemos el controlador de comentarios
     final CommentController controller = Get.put(CommentController(
       getPostCommentUseCase: Get.find(),  
     ));
 
-    // Llamamos a fetchComments cuando el widget se construye
     controller.fetchComments(postId);
 
     final screenWidth = MediaQuery.of(context).size.width;
@@ -34,10 +32,9 @@ class CommentsSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Usamos Obx para escuchar cambios en el estado del controlador
         Obx(() {
           if (controller.isLoading.value) {
-            return _buildSkeleton(isDarkMode); // Mostramos el skeleton mientras cargan los comentarios
+            return _buildSkeleton(isDarkMode); 
           }
 
           if (controller.comments.isEmpty) {
@@ -113,7 +110,7 @@ class CommentsSection extends StatelessWidget {
 
   Widget _buildSkeleton(bool isDarkMode) {
     return ListView.builder(
-      itemCount: 5,  // Solo mostramos 5 skeletons para simular carga
+      itemCount: 5, 
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) {

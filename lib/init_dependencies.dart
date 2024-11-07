@@ -1,33 +1,45 @@
 import 'package:get/get.dart';
 import 'package:post_flow/controllers/comment_controller.dart';
+import 'package:post_flow/controllers/get_user_controller.dart';
 import 'package:post_flow/data/data_sources/commet_data_sources.dart';
+import 'package:post_flow/data/data_sources/user_data_sources.dart';
 import 'package:post_flow/data/repositories/commet_repository_impl.dart';
 import 'package:post_flow/data/repositories/post_repository.dart';
+import 'package:post_flow/data/repositories/user_repository_impl.dart';
 import 'package:post_flow/domain/repositories/comment_repository_interface.dart';
+import 'package:post_flow/domain/repositories/user_repository.dart';
 import 'package:post_flow/domain/usecases/get_post_commet.dart';
 import 'package:post_flow/domain/usecases/get_posts.dart';
 import 'package:post_flow/data/data_sources/post_data_source.dart';
+import 'package:post_flow/domain/usecases/get_user.dart';
 
 void init() {
-  // Registra el PostRepositoryImpl con su respectivo RemoteDataSource
+
   Get.put(PostRepositoryImpl(remoteDataSource: PostRemoteDataSourceImpl())); 
   
-  // Registra el GetPosts que depende de PostRepositoryImpl
   Get.put(GetPosts(repository: Get.find<PostRepositoryImpl>()));
   
-   // Registrar el CommentRemoteDataSource
   Get.put<CommentRemoteDataSource>(CommentRemoteDataSourceImpl());
 
-  // Registrar el CommentRepositoryImpl con el CommentRemoteDataSource
   final commentRepository = CommentRepositoryImpl(remoteDataSource: Get.find<CommentRemoteDataSource>());
   Get.put<CommentRepositoryInterface>(commentRepository);
 
-  // Registrar el GetPostCommentUseCase que depende de CommentRepositoryInterface
   final getPostCommentUseCase = GetPostCommentUseCase(commentRepositoryInterface: Get.find<CommentRepositoryInterface>());
-  Get.put<GetPostCommentUseCase>(getPostCommentUseCase);  // Inyectamos el caso de uso
+  Get.put<GetPostCommentUseCase>(getPostCommentUseCase); 
 
-  // Ahora puedes inyectar el CommentController, que depende del caso de uso
   Get.put<CommentController>(CommentController(getPostCommentUseCase: Get.find<GetPostCommentUseCase>()));
+
+  // Registra el UserRemoteDataSource
+  Get.put<UserRemoteDataSource>(UserRemoteDataSource(baseUrl: 'https://jsonplaceholder.typicode.com'));
+
+  // Registra el UserRepositoryImpl
+  Get.put<UserRepositoryInterface>(UserRepositoryImpl(userRemoteDataSource: Get.find()));
+
+  // Registra el GetUserUseCase
+  Get.put<GetUserUseCase>(GetUserUseCase(userRepositoryInterface: Get.find()));
+
+  // Registra el UserController
+  Get.put<UserController>(UserController(getUserUseCase: Get.find()));
 
 
 }

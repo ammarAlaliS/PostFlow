@@ -37,6 +37,7 @@ class HomePage extends StatelessWidget {
           final post = postController.posts[index];
           return PostItem(
             id: post.id,
+            userId: post.userId,
             title: post.title,
             body: post.body,
             date: post.date,
@@ -119,6 +120,7 @@ class HomePage extends StatelessWidget {
 // Widget individual de PostItem
 class PostItem extends StatelessWidget {
   final int id;
+  final int userId;
   final String title;
   final String body;
   final String date;
@@ -130,7 +132,7 @@ class PostItem extends StatelessWidget {
     required this.title,
     required this.body,
     required this.date,
-    required this.isDarkMode,
+    required this.isDarkMode, required this.userId,
   }) : super(key: key);
 
   @override
@@ -158,7 +160,7 @@ class PostItem extends StatelessWidget {
           ),
           onTap: () {
             Get.to(
-              () => PostDetailScreen(id: id, title: title, body: body, date: date, isDarkMode: isDarkMode,),
+              () => PostDetailScreen(id: id, userId: userId, title: title, body: body, date: date, isDarkMode: isDarkMode,),
               transition: Transition.rightToLeft,
               duration: const Duration(milliseconds: 300),
             );
