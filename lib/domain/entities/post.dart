@@ -24,7 +24,6 @@ class Post {
     );
   }
 
-  // Método toJson para convertir el objeto a un mapa JSON
   Map<String, dynamic> toJson() {
     return {
       'userId': userId, 

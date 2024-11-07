@@ -56,7 +56,6 @@ class PostCard extends StatelessWidget {
           const SizedBox(height: 10),
           Row(
             children: [
-              // Fecha a la izquierda
               Text(
                 date,
                 style: TextStyle(
@@ -64,9 +63,7 @@ class PostCard extends StatelessWidget {
                   color: isDarkMode ? Colors.grey[400] : Colors.grey[700],
                 ),
               ),
-              // Espacio entre la fecha y el nombre del usuario
               const Spacer(),
-              // Nombre del usuario a la derecha
               Obx(() {
                 if (userController.isLoading.value) {
                   return Text(

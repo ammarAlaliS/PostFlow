@@ -5,7 +5,6 @@ class PostModel {
   final String body;
   final String date;
 
-  // Constructor
   PostModel({
     required this.userId,
     required this.id,
@@ -14,18 +13,17 @@ class PostModel {
     required this.date,
   });
 
-  // Método de fábrica para convertir JSON en un objeto de tipo PostModel
+
   factory PostModel.fromJson(Map<String, dynamic> json) {
     return PostModel(
-      userId: json['userId'] ?? 0, // Default a 0 si no existe el userId
-      id: json['id'] ?? 0, // Default a 0 si no existe el id
-      title: json['title'] ?? '', // Default a '' si no existe el title
-      body: json['body'] ?? '', // Default a '' si no existe el body
-      date: json['date'] ?? 'No Date', // Default a 'No Date' si no existe la fecha
+      userId: json['userId'] ?? 0, 
+      id: json['id'] ?? 0, 
+      title: json['title'] ?? '', 
+      body: json['body'] ?? '', 
+      date: json['date'] ?? 'No Date',
     );
   }
 
-  // Método para convertir un PostModel en un mapa JSON
   Map<String, dynamic> toJson() {
     return {
       'userId': userId,

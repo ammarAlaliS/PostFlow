@@ -13,7 +13,6 @@ import 'package:post_flow/presentation/screens/home/home_page.dart';
 import 'package:post_flow/presentation/screens/profile/profile_screen.dart';
 import 'package:post_flow/presentation/screens/saved_post/post_detail_page.dart';
 
-
 class Root extends StatelessWidget {
   const Root({Key? key}) : super(key: key);
 
@@ -24,8 +23,8 @@ class Root extends StatelessWidget {
 
     final List<Widget> pages = [
       HomePage(),
-      ProfileScreen(),
       PostSaved(),
+      ProfileScreen(),
     ];
 
     return SafeArea(
@@ -41,7 +40,6 @@ class Root extends StatelessWidget {
         final backgroundColor = isDarkMode
             ? ThemeColors.darkBackgroundColor
             : ThemeColors.lightBackgroundColor;
-
 
         updateSystemUIOverlay(isDarkMode: isDarkMode);
 
@@ -69,4 +67,3 @@ class Root extends StatelessWidget {
     );
   }
 }
-

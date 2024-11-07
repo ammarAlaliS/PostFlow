@@ -10,9 +10,7 @@ class UserRepositoryImpl implements UserRepositoryInterface {
 
   @override
   Future<User> getUser(int userId) async {
-    // Obtenemos el UserModel desde el data source
     final userModel = await userRemoteDataSource.getUser(userId);
-    // Convertimos el UserModel en una entidad del dominio
     return userModel.toDomain();
   }
 }

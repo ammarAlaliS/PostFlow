@@ -22,7 +22,6 @@ class UserModel {
     required this.company,
   });
 
-  // Convertir desde JSON
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
       id: json['id'],
@@ -36,7 +35,7 @@ class UserModel {
     );
   }
 
-  // Conversión de UserModel a User (para la capa de dominio)
+
   User toDomain() {
     return User(
       id: id,
@@ -67,7 +66,6 @@ class AddressModel {
     required this.geo,
   });
 
-  // Convertir desde JSON
   factory AddressModel.fromJson(Map<String, dynamic> json) {
     return AddressModel(
       street: json['street'],
@@ -78,7 +76,6 @@ class AddressModel {
     );
   }
 
-  // Conversión de AddressModel a Address (para la capa de dominio)
   Address toDomain() {
     return Address(
       street: street,
@@ -108,21 +105,16 @@ class GeoModel {
     );
   }
 
-  // Helper para parsear de String a double si es necesario
   static double _parseToDouble(dynamic value) {
     if (value is String) {
-      // Si el valor es un String, intentamos parsearlo a un double
-      return double.tryParse(value) ?? 0.0; // Retorna 0.0 si no es un número válido
+      return double.tryParse(value) ?? 0.0; 
     } else if (value is double) {
-      // Si el valor ya es un double, simplemente lo devolvemos
       return value;
     } else {
-      // Si el valor no es ni String ni double, retornamos 0.0
       return 0.0;
     }
   }
 
-  // Conversión de GeoModel a Geo (para la capa de dominio)
   Geo toDomain() {
     return Geo(
       lat: lat,
@@ -131,7 +123,6 @@ class GeoModel {
   }
 }
 
-// Modelo de Company
 class CompanyModel {
   final String name;
   final String catchPhrase;
@@ -143,7 +134,6 @@ class CompanyModel {
     required this.bs,
   });
 
-  // Convertir desde JSON
   factory CompanyModel.fromJson(Map<String, dynamic> json) {
     return CompanyModel(
       name: json['name'],
@@ -152,7 +142,6 @@ class CompanyModel {
     );
   }
 
-  // Conversión de CompanyModel a Company (para la capa de dominio)
   Company toDomain() {
     return Company(
       name: name,
