@@ -48,7 +48,7 @@ Esta aplicación fue creada como una prueba técnica para demostrar el uso de **
    - La función de infinite scroll carga más publicaciones solo cuando el usuario se desplaza hasta el final de la lista.
 
 4. **Manejo de Errores**:
-   - Los errores de red se manejan adecuadamente y se muestran mensajes al usuario en caso de problemas de conexión.
+   - Los errores de red se manejan adecuadamente y se muestran mensajes al usuario en caso de problemas de conexión. (pendiente por falta de tiempo)
    - Esto asegura una buena experiencia de usuario incluso cuando hay problemas de red.
 
 5. **Persistencia**:
@@ -66,6 +66,29 @@ Esta aplicación fue creada como una prueba técnica para demostrar el uso de **
 ## Estructura del Proyecto
 
 La aplicación sigue el patrón de **Arquitectura Limpia (Clean Architecture)**, con una estructura de carpetas organizada en módulos: `data`, `domain`, `presentation` y `core`.
+
+---
+
+## Desafíos Durante el Desarrollo
+
+A lo largo del desarrollo de esta aplicación, me enfrenté a varios desafíos que me ayudaron a aprender y mejorar mis habilidades en Flutter y en el manejo de herramientas como GetX. Algunos de los principales desafíos fueron:
+
+1. **Aprender a usar GetX**:
+   - Este fue uno de los mayores desafíos, ya que era la primera vez que usaba GetX como manejador de estado en un proyecto Flutter. Tuve que leer bastante documentación y tutoriales para entender cómo funciona el sistema de dependencias, el controlador de estados, y cómo manejar las reactividad de la UI con GetX.
+   - Al principio me resultó complicado entender cómo conectar el estado entre diferentes pantallas y asegurarme de que los datos se actualizaran correctamente en tiempo real. Sin embargo, después de explorar más a fondo la documentación oficial y algunos ejemplos en línea, pude dominar los conceptos principales.
+
+2. **Manejo de la Persistencia con SharedPreferences**:
+   - La implementación de la funcionalidad de "guardar publicaciones" fue otro desafío interesante. Tuve que investigar cómo usar `shared_preferences` para almacenar datos localmente. Inicialmente me costó un poco entender cómo recuperar y almacenar objetos más complejos (como listas de publicaciones) en este almacenamiento simple.
+
+3. **Paginado e Infinite Scroll**:
+   - Implementar el paginado con un **infinite scroll** fue un reto técnico. Tuve que asegurarme de que la aplicación no intentara cargar más datos de los que ya se habían mostrado y también de que la interfaz de usuario respondiera bien cuando el usuario se desplazara hacia abajo. Fue necesario gestionar bien el estado de carga y el manejo de errores, lo que me dio una mejor comprensión de cómo manejar el rendimiento y la carga dinámica en aplicaciones móviles.
+
+4. **Documentación y Recursos**:
+   - Durante el desarrollo, la documentación fue fundamental, especialmente al aprender nuevas herramientas y técnicas. Buscar ejemplos prácticos y estudiar la documentación oficial de Flutter y GetX me ayudó a resolver problemas que no había anticipado. 
+   - Por ejemplo, la primera vez que leí la documentación de **GetX** me pareció un poco confusa, pero luego de trabajar con ella, me di cuenta de lo poderoso y flexible que es este framework para manejar estados y dependencias.
+
+5. **Adaptación al Diseño Responsive**:
+   - Asegurarme de que la aplicación fuera **responsive** en una variedad de dispositivos fue otro desafío importante. Afortunadamente, Flutter ofrece muchas herramientas para construir interfaces adaptativas, pero fue necesario invertir tiempo en ajustar los diseños y hacer que se vieran bien en dispositivos de diferentes tamaños.
 
 ---
 
