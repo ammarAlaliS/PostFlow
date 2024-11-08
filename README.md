@@ -48,7 +48,7 @@ Esta aplicación fue creada como una prueba técnica para demostrar el uso de **
    - La función de infinite scroll carga más publicaciones solo cuando el usuario se desplaza hasta el final de la lista.
 
 4. **Manejo de Errores**:
-   - Los errores de red se manejan adecuadamente y se muestran mensajes al usuario en caso de problemas de conexión. (pendiente por falta de tiempo)
+   - Los errores de red se manejan adecuadamente y se muestran mensajes al usuario en caso de problemas de conexión. (pendiente por falta de tiempo pero lo agregare)
    - Esto asegura una buena experiencia de usuario incluso cuando hay problemas de red.
 
 5. **Persistencia**:
@@ -93,6 +93,8 @@ A lo largo del desarrollo de esta aplicación, me enfrenté a varios desafíos q
 ---
 
 ## Instrucciones para Ejecutar la Aplicación
+
+si quisieran probar la APK en androi le dejo el link para que lo puedan descargar en modo relase https://drive.google.com/file/d/1dRX2kFuaTsE3vJKSN7EyPmJnKnl3TgAV/view?usp=drive_link
 
 ### Requisitos Previos
 
