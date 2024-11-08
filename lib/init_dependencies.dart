@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:post_flow/controllers/comment_controller.dart';
 import 'package:post_flow/controllers/get_user_controller.dart';
+import 'package:post_flow/controllers/save_post_controller.dart';
 import 'package:post_flow/data/data_sources/commet_data_sources.dart';
 import 'package:post_flow/data/data_sources/user_data_sources.dart';
 import 'package:post_flow/data/repositories/commet_repository_impl.dart';
@@ -29,17 +30,15 @@ void init() {
 
   Get.put<CommentController>(CommentController(getPostCommentUseCase: Get.find<GetPostCommentUseCase>()));
 
-  // Registra el UserRemoteDataSource
   Get.put<UserRemoteDataSource>(UserRemoteDataSource(baseUrl: 'https://jsonplaceholder.typicode.com'));
 
-  // Registra el UserRepositoryImpl
   Get.put<UserRepositoryInterface>(UserRepositoryImpl(userRemoteDataSource: Get.find()));
 
-  // Registra el GetUserUseCase
   Get.put<GetUserUseCase>(GetUserUseCase(userRepositoryInterface: Get.find()));
 
-  // Registra el UserController
   Get.put<UserController>(UserController(getUserUseCase: Get.find()));
+  
+  Get.put<SavedPostsController>(SavedPostsController());
 
 
 }
