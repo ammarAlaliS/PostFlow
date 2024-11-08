@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:post_flow/controllers/save_post_controller.dart';
@@ -77,11 +79,11 @@ class PostItem extends StatelessWidget {
                       backgroundColor: const Color.fromARGB(255, 255, 198, 198),
                     ),
                     onPressed: () {
-                      // Eliminar la publicación guardada con el controlador
-                      savedPostsController.removeSavedPost(post); // Pasar el objeto `post`
+                      
+                      savedPostsController.removeSavedPost(post); 
                     }, 
                     child: Text(
-                      "Eliminar", // Cambiar el texto a "Eliminar"
+                      "Eliminar", 
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
@@ -94,7 +96,7 @@ class PostItem extends StatelessWidget {
             ],
           ),
           onTap: () {
-            // Puedes agregar una navegación o cualquier otra acción
+            
           },
         ),
       ),

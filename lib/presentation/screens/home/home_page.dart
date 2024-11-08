@@ -50,14 +50,14 @@ class HomePage extends StatelessWidget {
             isDarkMode: isDarkMode,
             onSavePressed: () {
               savedPostsController.savePost(post);
-              // Mostrar un mensaje cuando se guarda el post
+             
               Get.snackbar(
-                'Post Guardado', // Título del Snackbar
-                'El post ha sido guardado con éxito', // Mensaje del Snackbar
-                snackPosition: SnackPosition.BOTTOM, // Posición del Snackbar
-                backgroundColor: Colors.green, // Color de fondo
-                colorText: Colors.white, // Color del texto
-                duration: const Duration(seconds: 2), // Duración del mensaje
+                'Post Guardado',
+                'El post ha sido guardado con éxito',
+                snackPosition: SnackPosition.BOTTOM, 
+                backgroundColor: Colors.green,
+                colorText: Colors.white, 
+                duration: const Duration(seconds: 1),
               );
             },
           );
@@ -76,19 +76,19 @@ class HomePage extends StatelessWidget {
           child: Skeletonizer(
             enabled: true,
             child: Container(
-              height: 120, // Aumentamos la altura para hacerlo más visible
+              height: 120, 
               color: isDarkMode ? Colors.grey.shade800 : Colors.grey.shade300,
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Contenedor simula el título
+            
                   _buildSkeletonContainer(isDarkMode, 20, 120),
                   const SizedBox(height: 8),
-                  // Contenedor simula el subtítulo
+            
                   _buildSkeletonContainer(isDarkMode, 14, 100),
                   const SizedBox(height: 8),
-                  // Contenedor simula el contenido
+              
                   _buildSkeletonContainer(isDarkMode, 12, 80),
                 ],
               ),
@@ -99,7 +99,6 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  // Widget para un contenedor de esqueleto
   Widget _buildSkeletonContainer(bool isDarkMode, double height, double width) {
     return Container(
       height: height,
@@ -108,7 +107,6 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  // Indicador de carga al final de la lista
   Widget _buildLoadingIndicator(bool isDarkMode, bool isLoading) {
     return isLoading
         ? Center(
@@ -126,7 +124,6 @@ class HomePage extends StatelessWidget {
         : const SizedBox.shrink();
   }
 
-  // Inicializar el controlador de scroll
   ScrollController _initializeScrollController(PostController postController) {
     final ScrollController scrollController = ScrollController();
     scrollController.addListener(() {
@@ -141,7 +138,7 @@ class HomePage extends StatelessWidget {
   }
 }
 
-// Widget individual de PostItem
+
 class PostItem extends StatelessWidget {
   final int id;
   final int userId;
@@ -149,7 +146,7 @@ class PostItem extends StatelessWidget {
   final String body;
   final String date;
   final bool isDarkMode;
-  final VoidCallback onSavePressed; // Función que se ejecuta cuando se presiona el botón
+  final VoidCallback onSavePressed; 
 
   const PostItem({
     Key? key,
@@ -159,7 +156,7 @@ class PostItem extends StatelessWidget {
     required this.date,
     required this.isDarkMode,
     required this.userId,
-    required this.onSavePressed, // Recibimos la función
+    required this.onSavePressed, 
   }) : super(key: key);
 
   @override

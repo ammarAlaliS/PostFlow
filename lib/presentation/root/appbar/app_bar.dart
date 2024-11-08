@@ -24,7 +24,7 @@ class AppBarComponent extends StatelessWidget implements PreferredSizeWidget {
             ),
           ),
           actions: [
-            // Botón para cambiar tema
+      
             IconButton(
               icon: Icon(
                 themeController.isDarkMode.value
@@ -51,12 +51,12 @@ class AppBarComponent extends StatelessWidget implements PreferredSizeWidget {
               ),
               onPressed: () {},
             ),
-            const SizedBox(width: 10), // Espaciado entre los íconos
+            const SizedBox(width: 10),
           ],
         ));
   }
 
   @override
   Size get preferredSize =>
-      const Size.fromHeight(80); // Aumenta la altura del AppBar
+      const Size.fromHeight(80); 
 }
