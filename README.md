@@ -67,24 +67,37 @@ Esta aplicación fue creada como una prueba técnica para demostrar el uso de **
 
 La aplicación sigue el patrón de **Arquitectura Limpia (Clean Architecture)**, con una estructura de carpetas organizada en módulos: `data`, `domain`, `presentation` y `core`.
 
-```plaintext
-lib/
-├── core/                   # Funcionalidades compartidas y configuraciones globales
-│   ├── config/             # Configuraciones generales de la app
-│   ├── error/              # Manejo de errores y excepciones
-│   ├── network/            # Utilidades para verificar la conexión de red
-│   └── usecase/            # Clases base para la implementación de casos de uso
-├── data/                   # Capa de datos
-│   ├── models/             # Modelos que representan la estructura de datos
-│   ├── repositories/       # Implementaciones de los repositorios
-│   └── data_sources/       # Fuentes de datos (API externa)
-├── domain/                 # Capa de dominio
-│   ├── entities/           # Entidades de negocio (modelos sin lógica)
-│   ├── usecases/           # Casos de uso para ejecutar lógica de negocio
-│   └── repositories/       # Interfaces de repositorios para abstracción
-├── presentation/           # Capa de presentación
-│   ├── pages/              # Pantallas de la interfaz de usuario
-│   ├── widgets/            # Widgets personalizados reutilizables
-│   └── controllers/        # Controladores (usando GetX) para manejar estado
-└── main.dart               # Archivo principal de entrada de la aplicación
+---
 
+## Instrucciones para Ejecutar la Aplicación
+
+### Requisitos Previos
+
+1. **Flutter SDK**: Asegúrate de tener instalado Flutter en tu máquina. Puedes seguir las instrucciones de instalación oficiales en la página de [Flutter](https://flutter.dev/docs/get-started/install).
+   
+2. **Editor de Código**: Se recomienda usar un editor compatible con Flutter como [Visual Studio Code](https://code.visualstudio.com/) o [Android Studio](https://developer.android.com/studio).
+
+3. **Dispositivo o Emulador**: Debes tener un dispositivo físico o un emulador de Android/iOS configurado para poder ejecutar la aplicación. Puedes consultar cómo configurar un emulador en [la documentación de Flutter](https://flutter.dev/docs/get-started/install).
+
+4. **Dependencias del Proyecto**: La aplicación usa dependencias que se gestionan con el archivo `pubspec.yaml`, como `GetX` para el manejo de estado, `shared_preferences` para persistencia de datos, entre otras.
+
+---
+
+### Pasos para Ejecutar la Aplicación
+
+1. **Clonar el Proyecto**:
+   Si aún no has descargado el código del proyecto, clónalo desde el repositorio donde está alojado. Si el proyecto está en GitHub, usa el siguiente comando:
+   
+   ```bash
+   git clone https://github.com/ammarAlaliS/PostFlow.git
+   cd POST_FLOW
+
+2. **run flutter doctor**
+
+
+3. **run flutter clean**
+
+4. **run flutter pub get**
+
+5. **run flutter run**
+  
