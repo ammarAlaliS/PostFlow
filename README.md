@@ -94,7 +94,6 @@ A lo largo del desarrollo de esta aplicación, me enfrenté a varios desafíos q
 
 ## Instrucciones para Ejecutar la Aplicación
 
-si quisieran probar la APK en androi le dejo el link para que lo puedan descargar en modo relase https://drive.google.com/file/d/1dRX2kFuaTsE3vJKSN7EyPmJnKnl3TgAV/view?usp=drive_link
 
 ### Requisitos Previos
 
